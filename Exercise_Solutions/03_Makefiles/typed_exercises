@@ -1,0 +1,22 @@
+1) How do you create an object file with g++?
+You need to run g++ -c filename.cpp
+This simply return an object (.o) file.
+
+2) Why can't you just have everything in one file
+Because it makes the code more neat and easier to maintain.
+
+3) What is the purpose of a header guard?
+A header guard is needed to avoid header files being included multiple times.
+
+4) What does the -IFolder_name mean when passed to g++.
+It means to look for the header in the folder named Folder name.
+
+5) Do tabs matter in a Makefile?
+Yes they do as they are needed to indicate that we are specifying a command.
+
+6) What does $@ mean in a Makefile
+It means to evaluate the name of the current target.
+
+7) What does $^ mean in a Makefile
+It means to evaluate the filenames of all the prerequisites, spearated by spaces.
+

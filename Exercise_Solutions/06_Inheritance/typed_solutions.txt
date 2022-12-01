@@ -1,0 +1,21 @@
+1) What are protected class members?
+Protected class members are members are attributes of a class which can only be accessed
+by friends and derived classes.
+
+2) What are virtual functions?
+Virtual functions are functions which are defined using virtual in a base class and then 
+are overwritten in the derived classes.
+
+3) What is an abstract class?
+An abstract class is a class containing at least one abstract function, i.e. a virtual function set to 0.
+No objects of this type of class can exist.
+
+4) Explain dynamic polymorphism.
+Dynamic polymorphism means that a pointer to a base class can then point to a derived class.
+It is achieved by function overriding. It occurs when a derived class has a definition for one
+of the member functions of the base class, and allows us to work with user inputs which do not
+need to be known at compile time.
+
+5) Why destructors should be made virtual?
+Destructors should be made virtual to avoid that the wrong destructor 
+ is called when we define child classes of a base class. 

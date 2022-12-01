@@ -1,0 +1,27 @@
+1) How do you allocate a dynamic array in C++?
+A dynamic array, suppose of type int, in C++ can be allocated using the keyword new as follows:
+int* p = new int N[];
+
+2) What is the difference between delete and delete[]?
+In both cases the commands are used to manually free memory allocated on the heap.
+In the case of delete, this is used for simple data types, such as character, int, double,..
+In the case of delete[] this is used for arrays, so that the compiler knows that it should look after the first entry for deletion as well.
+
+3) When do you need to overload assignment operator for your class?
+You need to overload the assignment operator = for your class when it contains a pointer to some data in the heap.
+This is because otherwise the compiler simply copies the pointer if we want to set an object equal to another, while we want
+another copy of the data to be created.
+
+4) When do you need to create a copy constructor for your class?
+A copy constructor is needed to pass the object of some class as a function argument by value.
+This is for the same reason as the need to overload the assignment operator.
+
+5) When do you need to create a move constructor for your class?
+A move constructor is needed when we want to move our object instead of creating a new one. This is faster in many cases. Suppose we have
+a class with a pointer to some data on the heap. In this case we do not copy the data and then delte the previous copy but we simply create a new pointer
+to the data and make the old one a nullpointer.
+
+6) What should you do if your class allocates resources, but you are sure you will never need a copy constructor
+In this case since we do not want to write code that we are not going to use we can simply set the copy constructor to delete.
+This ensures that if somebody using our code tries to use the copy constructor, an error will be easily spotted.
+

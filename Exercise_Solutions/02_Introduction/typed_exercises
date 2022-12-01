@@ -1,0 +1,50 @@
+TEST YOURSELF
+
+1) What is a reference?
+A reference is an alternative name for an existing variable.
+
+2) Passing variables to functions by reference and by value.
+Passing a variable by reference allows us to alter the variable inside a function while
+ passing by value does not let us do that.
+
+3) Why pass variables by reference rather than by pointer
+In C++ passing single variable by pointers is not recommended. This is because it creates
+ confusion on wether the argument of the function is a single variable or an array.
+ Moreover when we call a function where the variable is passed by pointer we need to add & in front
+ of the variable
+
+4) How do you pass a variable defined as int x to a function that takes pointers
+We need to add the unpercent symbol & in front of the variable when we call the funciton.
+
+5) Why do we want to use const modifier whenever possible
+Because it makes it clearer to the caller that what is passed is not going to change.
+Moreover it helps preventing an accidental alteration of the variable.
+
+6) If you have a pointer named p how do you access a value it points to.
+To access the value it points to we need to dereference it using * symbol.
+
+7) What value is stored in the pointer variable itself?
+The pointer variable contains the memory address of the variable it points to.
+
+8) What can you say about a function that has signature void function()
+The function does not return anything as the output type is void. Moreover
+the function has no parameters since it takes no arguments.
+
+9) What is an auto keyword
+auto is used when we call a function and are unsure about the output type.
+It automatically sets the variable to the output type of the funciton called.
+
+10) What is function overloading?
+Function overloading allows us to have different functions with the same name 
+in the same file as long as their input parameters have a different number of type.
+
+11) What is a recursive function?
+A recursive function is a function which calls itself.
+
+12) The role of a constructor in a class is to initialize the the object of
+     that class when it is created.
+
+13) How can we change private member variables of a class.
+We can change private member variables by specifying class member functions which alter them.
+
+

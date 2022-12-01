@@ -1,0 +1,29 @@
+1) What is the main advantage of using templates?
+We do not have to overload operators for each type.
+
+2) Why do people put definitions of templated function directly into .hpp files?
+Because templates have to be instantiated by the compiler at compile time, hence if 
+we have different declaration and definitions you have to do that manually.
+
+3) Except on types, what else can we template on?
+We can also template on int and bool data types.
+
+4) What is template specialization?
+Template specialization is a templated function which produces different
+functions depending on the type passed. Hence inside the body of the function 
+there will be some if statements to check and change our function based on the types.
+
+5) What is a variadic template?
+A variadic template is a template that take a variable number of arguments.
+It is specified using template <typename... Values>.
+
+6) Why using push_back for std::vector is a bad idea?
+This is because of the way that stl vectors work. In fact they allocate as much memory as they think it 
+is necessary. Then if that memory is not sufficient, the whole content of the vector is copied somewhere else.
+This can cause very big time delays and hence it is not reccomended.
+
+7) How do you pass data from std::vector to a "C-style" function that needs a pointer?
+For a vector data you can either pass to the function vector.data() or &data[0].
+
+8) why you shouldn't use a "vector of vectors"?
+Because you ideally want the data elements to be continguous in memory.
