@@ -8,7 +8,7 @@ fig=plt.figure()
 def animate(i): 
     plt.imshow(np.random.random((50,50)))
  
-anim = animation.FuncAnimation(fig,animate,frames=10, interval=10)
+anim = animation.FuncAnimation(fig,animate,frames=10, interval=1000)
 
 # save the animation as an gif
 anim.save("animation_example.gif") 
