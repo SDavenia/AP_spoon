@@ -60,7 +60,7 @@ CCoords operator+(const int& b, const CCoords& c){
 int main(){
   CCoords var(2,3),var2(4.4,9.1);
   
-  auto var3=var + var2;
+  auto var3 = var + var2;
   var3.print();
   if(var2==var3){
     std::cout<<"equal"<<std::endl;

@@ -74,3 +74,41 @@ The aim of a constructor is to initialize the member variables of that class.
 
 ### How can we change private member variables of a class?
 We can change private member variables of a class by defining a member function of that class which alters them.
+
+## Lecture 3
+### How do you create an object file with g++
+To create an object file you use g++ -c filename.cpp
+
+### Why can't you just have everything in one file
+Because it makes the code confusing, especially for large projects
+
+### What is the purpose of a header guard?
+The purpose of a header guard is to avoid multiple inclusions when using header files. If a function is included more than once then this results into an error. This can occur when we have multiple header files with dependencies.
+
+### What does -IFOLDER_NAME mean when passed to g++
+It tells the compiler to look for header files in the folder named FOLDER_NAME
+
+### Do tabs matter in a Makefile?
+Yes they do as the commands in a rule MUST BE specified after a TAB.
+
+### What does $@ mean in a makefile
+It evaluates to the name of the current target
+
+### What does $^ mean in a makefile
+It evaluates to the names of all the prerequisites in the current rule, separated by a space.
+
+### How to use make with a makefile that is not named Makefile.
+You need to add the additional flag --file=MyMakefileName when you call make.
+
+### What does it mean if a function is a friend of a class?
+It means that the function can access the private members of objects of that class, just like any member function would.
+
+### Why should non-class member operator be friends of classes?
+Because they need to be able to access the private members varianbles
+
+### Which header do you need to include to work with files?
+You need to include the fstream header from the standard library.
+
+### How do you open a file in append mode
+To open a file test.txt in append mode you need to open it using
+filevar.open("test.txt", std::ios_base::app);
