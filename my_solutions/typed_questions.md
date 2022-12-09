@@ -112,3 +112,27 @@ You need to include the fstream header from the standard library.
 ### How do you open a file in append mode
 To open a file test.txt in append mode you need to open it using
 filevar.open("test.txt", std::ios_base::app);
+
+## Lecture 4
+### what's the main advantage of using templates?
+The main advantage of using templates is that they allow us to write a function which is capable of working on different types.
+This helps with code clarity.
+
+### Why do people usually put definitions of templated functions directly into .hpp files
+Because templated functions have to be instantiated manually otherwise, which kinda defeats the whole point.
+
+### Except on types what else can we template on?
+We can also template on integer numbers, intendent not only in the sense of int. This is called non-type template parameters. 
+
+### What is a variadic template
+A variadic template allows us to obtain functions which are templated on a variable number of arguments. They are obtained using the ellipsis.
+
+### Why using push_back for std::vector is a bad idea?
+Vectors are allocated dynamically on the heap, with an amount of memory which the compiler thinks it is enough. When we use push_back we add elements at the end of the list, so it is generally fine unless we exceed the allocated memory. In that case the whole object has to be moved to a new memory location, and that of course requires quite a lot of time when working with big objects.
+
+### How do you pass data from std::vector to a C-style function that needs a pointer
+Suppose you have a C++ std pointer called vec.
+You can either pass it using the address of the first element of the vector &vec[0] or by using vec.data().
+
+### Why you should not use a vector of vectors?
+This is because you want the data to be continguous in memory, which does not happen when we have vectors of vectors. 
