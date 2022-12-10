@@ -48,6 +48,13 @@ int main(){
     C.print_to_file("C.txt");
 }
 
+
+
+
+
+
+
+
 template <typename T>
 void CMatrix<T>::print_matrix() const{
     for(int i = 0; i < size; i++){
