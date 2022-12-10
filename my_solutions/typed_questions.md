@@ -136,3 +136,24 @@ You can either pass it using the address of the first element of the vector &vec
 
 ### Why you should not use a vector of vectors?
 This is because you want the data to be continguous in memory, which does not happen when we have vectors of vectors. 
+
+## Lecture 5
+### How do you allocate dynamic array in C++?
+A dynamic array arr can be allocated using new as follows:
+int* p = new int[N];
+
+### What is the difference between delete and delete[]
+delete is used to free memory allocated for one object, while delete[] is used to free memory allocated to an array.
+
+### When do you need to overload the assignment operator for your class
+When our class contains members allocated dynamically we need to manually overload the assignment operator. Otherwise a shallow copy (and not a deep copy as we want) is obtained. This results in errors as we have two pointers to the same memory location and the destructor is called twice on the same object.
+
+### when do you need to create a copy constructor for your class?
+When your class contains members allocated dynamically and you want to pass your object by value to functions. Same as above otherwise we obtain a new pointer to the same memory location and when the destructor is called that part of memory is erased.
+
+### When do you need to create a move constructor for your class?
+A move constructor is needed when we want to move an object which contains a member which is dynamically allocated.
+
+### What should you do if your class allocates resources but you are sure you will never need a copy constructor?
+In this case we should still define a copy constructor but set it to delete to make possible bugs easier to identify.
+

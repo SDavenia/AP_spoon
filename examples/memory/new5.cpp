@@ -163,7 +163,7 @@ int main(){
     
     //obj3 still exists, but assume it can't be used anymore 
     auto obj5=std::move(obj3); 
-    
+    std::cout << "This moves" <<std::endl;
     obj5=std::move(obj2);
     
     return 0;
