@@ -31,7 +31,8 @@ int main () {
   Triangle trgl;
   rect.set_values(4,5);
   trgl.set_values(4,5);
-   //rect.height=10; //won't work with "protected" member
+  //rect.height=10; //won't work with "protected" member
+  // std::cout << rect.height << std::endl; not accessible
   std::cout << rect.area() << std::endl;
   std::cout << trgl.area() << std::endl;
   return 0;

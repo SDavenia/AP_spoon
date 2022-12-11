@@ -37,7 +37,8 @@ int main () {
   ppoly1->set_values (4,5);
   ppoly2->set_values (4,5);
   ppoly3->set_values (4,5);
-  std::cout << ppoly1->area() << std::endl;
+  std::cout << rect.area() <<std::endl;      // call using the object can also do it with overload
+  std::cout << ppoly1->area() << std::endl;  // call using pointer, can't be done with overload
   std::cout << ppoly2->area() << std::endl;
   std::cout << ppoly3->area() << std::endl;
   return 0;

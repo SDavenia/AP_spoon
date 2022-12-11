@@ -157,3 +157,21 @@ A move constructor is needed when we want to move an object which contains a mem
 ### What should you do if your class allocates resources but you are sure you will never need a copy constructor?
 In this case we should still define a copy constructor but set it to delete to make possible bugs easier to identify.
 
+## Lecture 6
+### What are protected class members?
+Protected class members are members of a class which can't be accessed outside the class (just like private ones) but can be accessed by derived classes (unlike private ones).
+
+### What are virtual functions?
+A virtual function is a member function which is declared within a base class and is re-defined (overridden) by a derived class. 
+When you refer to a derived class object using a pointer or a reference to the base class, you can call a virtual function for that object and execute the derived class’s version of the function. 
+
+### What is an abstract class?
+An abstract class is a class where a virtual function is set = 0 (or a derived class of an abstract base class where the virtual function set to 0 is not overwritten). The prerogrative of abstract classes is that we can't define an object of that class.
+
+### Explain dynamic (runtime) polymorphism
+In c++ a pointer to a derived class is compatible with a pointer to the base class. Thanks to this using virtual function and override we can use dynamic polymorphism.
+This means that the compiler decides at run time which function to call on the object at run time.
+This is useful if we receive from input objects of derived classes (suppose cat, dog, ...) from a base class (animal) and we want to use a member function on them. Since we only know at run-time which one we are dealing with, we need to use dynamic polymorphism.
+
+### Why destructors should be made virtual?
+Destructors should be made virtual to ensure that when we work with derived classes using pointers to the base class we call the correct destructor, i.e. the derived class destructor and not the base one only.

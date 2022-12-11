@@ -7,7 +7,7 @@ public:
     T field1; 
     CBase1(const T& f0):field1(f0){};
    // virtual 
-    ~CBase1(){std::cout<<"base dctor called"<<std::endl;};
+    virtual ~CBase1(){std::cout<<"base dctor called"<<std::endl;};
 };
 
 template <typename T>
@@ -19,7 +19,7 @@ public:
         field2=f0;
         arr=new int[10];
     };
-   ~CDerived1(){free(arr); std::cout<<"derived dctor called"<<std::endl;}
+   ~CDerived1() override {free(arr); std::cout<<"derived dctor called"<<std::endl;}
 };
 
 

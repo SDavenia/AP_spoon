@@ -30,14 +30,20 @@ template <typename T>
 class CDerived1:public CBase1<T>, public CBase2{
 public:
     T field4; 
+    // When we call the constructor of the derived class first we need to call the constructor of the base classes
     CDerived1(const T& f0):CBase1<T>(f0),CBase2(f0){
         field4=f0;
     };
    ~CDerived1(){std::cout<<"derived dctor called"<<std::endl;}
    void test_function(){
-       std::cout<<field0<<" "<<field01<<" "<<std::endl;
+        // Here we access the members of the non templated base 
+        std::cout<<"non templated members"<<std::endl;
+       std::cout<<field0<<" "<<field01<<std::endl;
+       // Here we want to access the members of the templated base
        //using "this" is one of the ways to get around templates 
-      std::cout<<this->field1<<" "<<this->field2<<" "<<std::endl;   
+      std::cout<<"templated members"<<std::endl;
+      std::cout<<this->field1<<" "<<this->field2<<" "<<std::endl; 
+      std::cout<<field1<<std::endl;  
     };
 };
 
@@ -46,6 +52,9 @@ int main(){
     
  CDerived1<int> c(11);
  std::cout<<c.field0<<" "<<c.field4<<std::endl;
- c.say_hi();
+ std::cout<<c.field1<<std::endl;
+ c.test_function();
+ //c.say_hi();
     
 }
+// Notice how the derived destructor is NOT called, see virtual_dctor.cpp
