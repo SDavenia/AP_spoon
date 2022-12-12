@@ -33,7 +33,6 @@ public:
     // move assingment operator
     CMatrix& operator=(CMatrix&& p);
  
-
     void read_from_file(std::string filename);
     void print_to_file(std::string filename) const;
 
@@ -76,6 +75,7 @@ CMatrix<T>::CMatrix(const int N){
 template <typename T>
 CMatrix<T>::CMatrix(const CMatrix<T>& p){
     std::cout<<"Copy constructor"<<std::endl;
+    // Check for self assignment
     if (this != &p){
         size = p.size;
         int n_elements = size * size;
