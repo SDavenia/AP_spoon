@@ -45,6 +45,7 @@ CMatrix<T>::CMatrix(int N){
 template<typename T> 
   CMatrix<T>::~CMatrix() {
       if (data!=nullptr){
+        std::cout<<"Calling destructor"<<std::endl;
         delete[] data;
       }
 };
