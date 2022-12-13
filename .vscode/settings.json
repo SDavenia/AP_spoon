@@ -53,6 +53,8 @@
         "tuple": "cpp",
         "type_traits": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "cmath": "cpp",
+        "vector": "cpp"
     }
 }
