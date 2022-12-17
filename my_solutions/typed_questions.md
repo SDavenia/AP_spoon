@@ -175,3 +175,18 @@ This is useful if we receive from input objects of derived classes (suppose cat,
 
 ### Why destructors should be made virtual?
 Destructors should be made virtual to ensure that when we work with derived classes using pointers to the base class we call the correct destructor, i.e. the derived class destructor and not the base one only.
+
+
+## Lecture 7
+### what is this [](){}()
+This is a lambda function that does not capture anything and has no parameters. It also does nothing but it is called.
+
+### what's the general structure of a lambda function?
+The general structure of a lambda function is as follows
+[capture](parameters)-> return_type{body of the function}();
+Where:
+ - capture: similar to getting parameters from scope objects. It is used to give the lambda function access to objects in the scope (more similar to members).
+ - parameters: passsed to the lambda function
+
+### what does "mutable" keyword do in a lambda function?
+Mutable allows us to alter the variables which are captured by copy inside the body of the function.

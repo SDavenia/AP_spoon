@@ -23,9 +23,9 @@ int main(){
     int count{0};
    
     //this all are valid expressions that do nothing
-    [](){};
-    []{}();
-    []{};
+    [](){}; // does nothing and not called
+    []{}(); // does nothing and is called
+    []{};  // same as first line
     
     
     //actually, every lambda has it's own type, but you don't have to worry about that with auto

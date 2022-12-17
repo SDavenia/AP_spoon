@@ -15,7 +15,7 @@ int main () {
 
    // concatenates str1 and str2
    strcat( str1, str2);
-   std::cout << "strcat( str1, str2): " << str1 << std::endl;
+   std::cout << "strcat(str1, str2): " << str1 << std::endl;
 
    // total lenghth of str1 after concatenation
    len = strlen(str1);

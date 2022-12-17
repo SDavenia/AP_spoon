@@ -7,8 +7,10 @@
 #include <fstream>
 #include <type_traits>
 #include <cstdlib>
-#include <cblas.h>//to call cblas_dgemm to compare results
+#include </Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks/Accelerate.framework/Versions/Current/Frameworks/vecLib.framework/Headers/cblas.h>//to call cblas_dgemm to compare results
 #include <chrono>
+// Compile with flag -framework Accelerate
+
 
 //compile with either -lblas or -lopenblas depending on what you have in your system
 //and -std=c++17 if you have an old compiler

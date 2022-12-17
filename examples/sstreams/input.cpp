@@ -2,6 +2,7 @@
 #include <iostream>
 
 int main( int argc, char *argv[] ){
+  // Initialize an istringstream object to the first passed argument
   std::istringstream ss(argv[1]);
   int x{0};
   //we try to read a number from the first passed argument
