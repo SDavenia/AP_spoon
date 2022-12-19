@@ -55,6 +55,12 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "cmath": "cpp",
-        "vector": "cpp"
-    }
+        "vector": "cpp",
+        "array": "cpp",
+        "numeric": "cpp",
+        "random": "cpp",
+        "algorithm": "cpp",
+        "sstream": "cpp"
+    },
+    "C_Cpp.errorSquiggles": "disabled"
 }

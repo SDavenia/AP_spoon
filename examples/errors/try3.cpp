@@ -2,6 +2,8 @@
 #include <iostream>
 
 #include "ap_error.hpp"
+// Remember to compile with -Iinclude
+
 
 struct Square_root_invalid : public std::exception {
   std::string message;
