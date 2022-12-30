@@ -1,5 +1,3 @@
-[I consider c++ more important, so there are less python questions than c++ ones, and no advanced questions. I will compile all the c++ questions into one file before New Year. At the exam, the questions will come in random order (to make it harder to cheat).]
-
 How do you create markdown cell in Jupyter? (with keyboard commands)
 
 How do you delete a cell in Jupyter (with keyboard command)?
