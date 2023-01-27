@@ -1,13 +1,37 @@
 1. name at least 5 variable types in c++
+int, float, double, bool, char.
+
 2. what is "int overflow"?
+int overflow occurs when we try to store in a variable of type int an integer which is larger than the value the data type int can have.
+
 3. why `using namespace std` might not be a good idea?
+It is not a good idea because it imports the whole std library. This makes it hard to know which function we are using, especially when there are multiple functions
+with the same name as it may result in undefined behaviour.
+
 4. which header do you have to include for the access to std::cout?
+You have to include the <iostream> header.
+
 5. what would be the simplest "legal" program in c++?
+The simplest c++ program that you are able to compile is an empty main
+int main(){
+}
+
 6. what is the difference in c++ between `struct` and `class`?
+The difference is the default access type of their members.\
+For `struct` the default is `public` while for `class` the default is `private`.
+
 7. what does `break` statement do in a loop in c++?
+The `break` statement exits the loop.
+
 8. what does `continue` statement do in a loop?
+The `continue` statement exits the current iteration of the loop and moves on to the next one.
+
 9. how do you define a static array of type int and size 7?
+int arr[7]
+
 10. what can you use to read interactive user input?
+You can use the extraction operator `<<` with `std::cin` from the <iostream> header.
+
 11. What is a reference?
 12. What is a difference between passing variables to functions by reference and by value?
 13. Why do we want to pass variables to functions by reference rather than by pointer?
