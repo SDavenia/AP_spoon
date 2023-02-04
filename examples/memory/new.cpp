@@ -10,7 +10,7 @@ public:
 };
 
 template<typename T> 
-    MyClass<T>::MyClass(const int& N) {
+MyClass<T>::MyClass(const int& N) {
     data=new T[N];
     for(int i=0;i<N;i++){
         data[i]=i;
@@ -19,7 +19,7 @@ template<typename T>
 
 
 template<typename T> 
-    MyClass<T>::~MyClass() {
+MyClass<T>::~MyClass() {
     delete[] data;
     data=nullptr;
     std::cout<<"destructor called"<<std::endl;
@@ -28,7 +28,7 @@ template<typename T>
 
 
 int main(){
-   int N{12};
+    int N{12};
     int* p =new int[N];
     for(int i=0;i<N;i++){
         p[i]=i;
@@ -38,7 +38,6 @@ int main(){
     delete[] p; 
     
     MyClass<int> obj(10);
-    
     
     return 0;
 }

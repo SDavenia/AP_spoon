@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 template <typename T>
 class CMyClass{
 public:
@@ -8,10 +9,19 @@ public:
     CMyClass(const int& N);
     ~CMyClass();
     void print();
+    // Copy assignment operator
     CMyClass& operator=(const CMyClass& p);
+
+    // Move assignment opereator
     CMyClass& operator=(CMyClass&& p);
+
+    // Plus operator
     CMyClass operator+(const CMyClass& p);
+
+    // Copy constructor
     CMyClass(const CMyClass& p);
+
+    // Move assingment operator
     CMyClass(CMyClass&& p);
     
 };

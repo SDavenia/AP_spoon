@@ -31,6 +31,12 @@ int main () {
   Rectangle rect;
   Triangle trgl;
   Polygon poly;
+  /*
+  Below you can notice how pointers to the derived class are compatible with pointers to the base class.
+   However, to call their member functions from the pointer you need to use ->.
+   Since we are overriding the functions, the derived one will be called, if we had not the base one would have been
+    called since the pointer is a pointer to object of the base class. (As evalutation of the objects occurs at run time and not compile time)
+  */
   Polygon * ppoly1 = &rect;
   Polygon * ppoly2 = &trgl;
   Polygon * ppoly3 = &poly;

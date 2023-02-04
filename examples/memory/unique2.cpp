@@ -1,3 +1,4 @@
+// SHOW THIS EXAMPLE NEXT TO new5.cpp to show advantages of smart pointers.
 #include <iostream>
 #include <memory>
 
@@ -7,11 +8,21 @@ public:
     std::unique_ptr<T[]> data;
     size_t size;
     CMyClass(const int& N);
+    // NO NEED FOR DESTRUCTOR
     void print();
+    // Copy assignment operator
     CMyClass& operator=(const CMyClass& p);
+
+    // Move assignment operator
     CMyClass& operator=(CMyClass&& p);
+
+    // Plus operator
     CMyClass operator+(const CMyClass& p);
+
+    // Copy constructor
     CMyClass(const CMyClass& p);
+
+    // Move assingment operator
     CMyClass(CMyClass&& p);
     
 };
@@ -45,7 +56,7 @@ CMyClass<T>& CMyClass<T>::operator=(const CMyClass<T>& p){
 if (this != &p) { 
 //copy non-dynamic variables
 	size=p.size;
-    data.reset(new T[size]);
+    data.reset(new T[size]); // Free previous memory and allocate new one
     for(int i=0;i<size;i++){
         data[i]=p.data[i];
     }

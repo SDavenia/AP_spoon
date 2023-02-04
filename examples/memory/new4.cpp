@@ -1,4 +1,9 @@
 #include <iostream>
+/*
+In this example we define the copy assingment operator as well as the copy constructor.
+It is needed for passing objects of our class to functions by value, otherwise we would not be able to,
+ as when an object is passed to a fucntion a copy of that object is constructed.
+*/
 
 template <typename T>
 class CMyClass{
@@ -8,12 +13,16 @@ public:
     CMyClass(const int& N);
     ~CMyClass();
     void print();
+
+    // Copy assingment operator
     CMyClass& operator=(const CMyClass& p);
     CMyClass operator+(const CMyClass& p);
+
+    // Copy constructor
     CMyClass(const CMyClass& p);
-    
 };
 
+// Constructor when an integer N is passed.
 template<typename T> 
     CMyClass<T>::CMyClass(const int& N) {
     data=new T[N];
@@ -24,14 +33,13 @@ template<typename T>
     std::cout<<"constructor called"<<std::endl;
 }
 
-
+// Destructor defined
 template<typename T> 
     CMyClass<T>::~CMyClass() {
     delete[] data;
     data=nullptr;
     std::cout<<"destructor called"<<std::endl;
 }
-
 
 template<typename T> 
 void CMyClass<T>::print() {
@@ -41,7 +49,7 @@ void CMyClass<T>::print() {
     std::cout<<std::endl;   
 }
 
-
+// Here we define the copy assignment operator
 template <typename T>
 CMyClass<T>& CMyClass<T>::operator=(const CMyClass<T>& p){
     std::cout<<"assignment operator called"<<std::endl;
@@ -68,6 +76,7 @@ return *this;
 };
 
 
+// Here we define the copy constructor
 template<typename T> 
 CMyClass<T>::CMyClass ( const CMyClass<T>& p ) {
     std::cout<<"copy constructor called"<<std::endl;
@@ -90,13 +99,11 @@ if (this != &p) {
 
 
 
-
 //nonsense function to see what happens 
 template <typename T>
 void a_function(CMyClass<T> obj){
     std::cout<<obj.size<<std::endl;
 }
-
 
 template<typename T> 
 CMyClass<T> CMyClass<T>::operator+ ( const CMyClass<T>& p ) {
@@ -113,18 +120,23 @@ CMyClass<T> CMyClass<T>::operator+ ( const CMyClass<T>& p ) {
 
 
 int main(){
-   
+    std::cout<<"These two should call constructor"<<std::endl;
     CMyClass<int> obj(10);
     CMyClass<int> obj2(10);
    //THIS ACTUALLY NEVER CALLS ASSIGNMENT OPERATOR! 
+    std::cout<<"Copy elision: no assignment operator but default constructor instead"<<std::endl;
     auto obj3=obj2+obj;
     obj3.print();
-    //will crash without a copy constructor
+
+    //This will crash without a copy constructor, as we are passing by value
     a_function(obj);
+    // Moreover, the object will be destroyed when function is done, so destructor is called as well.
+
     //another use of copy constructor
+    std::cout<<"Here we will call the copy constructor as well"<<std::endl;
     CMyClass<int> obj4(obj3);
     
-    
+    std::cout<<"Here we have copy elision again, as instead of call"
     CMyClass<int> obj5(obj3+obj2);
     return 0;
 }

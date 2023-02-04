@@ -10,8 +10,10 @@ int main(){
     c.x=0;c.y=3;
     auto cc=2+c;
 }
+
 This is wrong as this function is not a member function of the class CCoords but it is a friend function. As such we need to pass an object of class CCoords as well.
 We also need to ensure that the order is correct, so since in the main we are calling int + CCoords we can correct this as follows:
+
 CCoords CCoords::operator+(const int& b, const CCoords& c) {
         CCoords result;
         result.x = c.x + b;

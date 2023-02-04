@@ -170,7 +170,7 @@ An abstract class is a class where a virtual function is set = 0 (or a derived c
 
 ### Explain dynamic (runtime) polymorphism
 In c++ a pointer to a derived class is compatible with a pointer to the base class. Thanks to this using virtual function and override we can use dynamic polymorphism.
-This means that the compiler decides at run time which function to call on the object at run time.
+This means that the compiler decides at run time which function to call on the object.
 This is useful if we receive from input objects of derived classes (suppose cat, dog, ...) from a base class (animal) and we want to use a member function on them. Since we only know at run-time which one we are dealing with, we need to use dynamic polymorphism.
 
 ### Why destructors should be made virtual?

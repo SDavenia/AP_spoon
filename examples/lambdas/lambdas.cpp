@@ -46,10 +46,12 @@ int main(){
     //this will ignore the b change and still keep the zero
     print_b();
    
+   std::cout<<"Before very useful lambda "<<a<<std::endl;
     auto very_useful_lambda = [a]() mutable {a=a+2;
         std::cout << "local a is: "<< a << std::endl;
     };
     very_useful_lambda();
+    std::cout<<"After very useful lambda "<<a<<std::endl;
     
     
     std::cout<<addition(3,5)<<std::endl;

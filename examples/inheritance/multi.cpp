@@ -8,7 +8,9 @@ private:
     int g;
     int b;
 public: 
-    Colour(){};
+    Colour(){
+      std::cout<<"Calling colour constructor"<<std::endl;
+    };
     Colour(const int& r0, const int& g0, const int& b0):r(r0),g(g0),b(b0){};
     void set_colour(const int& r0, const int& g0, const int& b0){
         r=r0; g=g0; b=b0;
@@ -40,6 +42,7 @@ class Rectangle: public Polygon, public Colour {
 //one angle is 90
 class Triangle: public Polygon, public Colour {
   public:
+    // Triangle default constructor also calls the default
     Triangle():Colour(){};  
     Triangle(const int& r0, const int& g0, const int& b0):Colour(r0,g0,b0){};  
     int area(){ 

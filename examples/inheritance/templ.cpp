@@ -36,14 +36,14 @@ public:
     };
    ~CDerived1(){std::cout<<"derived dctor called"<<std::endl;}
    void test_function(){
-        // Here we access the members of the non templated base 
-        std::cout<<"non templated members"<<std::endl;
+       // Here we access the members of the non templated base 
+       std::cout<<"non templated members"<<std::endl;
        std::cout<<field0<<" "<<field01<<std::endl;
        // Here we want to access the members of the templated base
        //using "this" is one of the ways to get around templates 
-      std::cout<<"templated members"<<std::endl;
-      std::cout<<this->field1<<" "<<this->field2<<" "<<std::endl; 
-      std::cout<<field1<<std::endl;  
+       std::cout<<"templated members"<<std::endl;
+       std::cout<<this->field1<<" "<<this->field2<<" "<<std::endl; 
+       std::cout<<field1<<std::endl;  
     };
 };
 

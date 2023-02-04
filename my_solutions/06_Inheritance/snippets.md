@@ -59,7 +59,7 @@ int main(){
 ```
 
 The problem here is that when pointer s goes out of scope only the destructor of the base class Shape is called, meaning
- that the memory is not actually freed. This occurs because we use a pointer to the base class Shape to for a new object of class Polygon (I suppose there is a typo here).
+ that the memory is not actually freed. This occurs because we use a pointer to the base class Shape for a new object of class Polygon (I suppose there is a typo here).
 To fix this we need to make the destructor virtual, which ensures that the destructors of the derived class is called as well.
 
 ```

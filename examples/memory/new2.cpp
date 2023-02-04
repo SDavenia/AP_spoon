@@ -1,19 +1,28 @@
 #include <iostream>
-
+/*
+If we do not define the copy constructor, we incur in an error, since the destructor tries to free twice the same memory, 
+as only a shallow copy was created.
+*/
 template <typename T>
 class CMyClass{
 public:
+
+    // Allocate memory on the heap for data.
     T* data;
     size_t size;
+
+    // Constructor
     CMyClass(const int& N);
+
+    // Destructor (need to define it as we have to allocate memory on the heap).
     ~CMyClass();
     void print();
-  //  CMyClass& operator=(const CMyClass& p);
-    
-};
+    CMyClass& operator=(const CMyClass& p);
+}; 
 
+// Define the constructor, we can't use the default one as we want to have memory allocated on the heap.
 template<typename T> 
-    CMyClass<T>::CMyClass(const int& N) {
+CMyClass<T>::CMyClass(const int& N) {
     data=new T[N];
     size=N;
     for(int i=0;i<N;i++){
@@ -22,7 +31,7 @@ template<typename T>
     std::cout<<"constructor called"<<std::endl;
 }
 
-
+// 
 template<typename T> 
     CMyClass<T>::~CMyClass() {
     delete[] data;
@@ -38,7 +47,7 @@ void CMyClass<T>::print() {
     }
     std::cout<<std::endl;   
 }
-/*
+
 template <typename T>
 CMyClass<T>& CMyClass<T>::operator=(const CMyClass<T>& p){
     std::cout<<"assignment operator called"<<std::endl;
@@ -63,7 +72,7 @@ if (this != &p) {
 }//of cheking for self-assignement
 return *this;
 };
-*/
+
 
 int main(){
    

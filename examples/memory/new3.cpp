@@ -1,4 +1,8 @@
- 
+/*
+Here we show copy elision.
+Even though we have not defined a deep copy assingment operator, we have that due to copy elision the
+ copy is never created, so we do not incur in an error even though the copy assingment operator is not defined.
+*/ 
 #include <iostream>
 
 template <typename T>

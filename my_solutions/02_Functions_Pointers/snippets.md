@@ -43,8 +43,7 @@ int main(){
    std::cout<<var1<<" "<<var2<<std::endl;
    return 0;
 }
-There are two main mistakes in this code.
-The first one is that we need to assign b to temp and not to a otherwise we end up with the same value twice.
+
 The other is that this function does not actually swap the values of a and b, as they are passed by value to the function. 
 In order to let the function alter them they need to be passed by pointer or by reference. The latter is preferrable in c++.
 A possible solution using passing by reference is as follows:

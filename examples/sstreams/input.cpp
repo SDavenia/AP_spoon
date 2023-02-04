@@ -11,7 +11,7 @@ int main( int argc, char *argv[] ){
   } else if (!ss.eof()) {
     std::cerr << "There are trailing characters after the number: " << argv[1] << std::endl;
     std::cout<<"number was "<<x<<std::endl;
-  }  
-  
+  }
+  std::cout<<x<<std::endl;
   return 0;
 }
