@@ -21,7 +21,7 @@ public:
         field2=f0;
         arr=new int[10];
     };
-   //~CDerived1() override {free(arr); std::cout<<"derived dctor called"<<std::endl;}
+   // ~CDerived1() override {free(arr); std::cout<<"derived dctor called"<<std::endl;}
    ~CDerived1() {free(arr); std::cout<<"derived dctor called"<<std::endl;}
 };
 

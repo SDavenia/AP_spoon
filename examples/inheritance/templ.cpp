@@ -39,6 +39,7 @@ public:
        // Here we access the members of the non templated base 
        std::cout<<"non templated members"<<std::endl;
        std::cout<<field0<<" "<<field01<<std::endl;
+
        // Here we want to access the members of the templated base
        //using "this" is one of the ways to get around templates 
        std::cout<<"templated members"<<std::endl;

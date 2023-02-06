@@ -61,7 +61,7 @@ void printC(int* arr, int size){
 
 int main(){
     
-    std::array<int,5> arr;//need to specify the number of elements
+    std::array<int,5> arr; //need to specify the number of elements
     std::vector<int>  vec;
     vec.resize(5);
     print_whatever(arr);

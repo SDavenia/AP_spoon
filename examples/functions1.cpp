@@ -29,7 +29,6 @@ void add_two_ref(int&a, int&b){
     b=b+2;
 }
 
-//this will change a and b
 //can overload the function because the type of variable is different
 void add_two_ref(double& a){
     a=a+2;

@@ -16,7 +16,8 @@ public:
         result.x = x + b.x;
         result.y = y + b.y;
         return result;
-    }//operator+
+    }
+  //operator+
   /*  //this is a wrong way, as it becomes non-commutative
     CCoords operator+(const int& b) {
         CCoords result;
@@ -44,6 +45,7 @@ public:
 
 
 CCoords operator+(const CCoords& c, const int& b){
+    std::cout<<"Calling +"<<std::endl;
     CCoords result;
     result.x=c.x+b;
     result.y=c.y+b;
@@ -51,6 +53,7 @@ CCoords operator+(const CCoords& c, const int& b){
 };
  
 CCoords operator+(const int& b, const CCoords& c){
+    std::cout<<"Calling +"<<std::endl;
     CCoords result;
     result.x=c.x+b;
     result.y=c.y+b;
